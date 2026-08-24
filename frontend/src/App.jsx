@@ -501,7 +501,7 @@ export default function App() {
       payload = { mode: "manual", ...formData };
     }
     try {
-      const res = await fetch("http://127.0.0.1:5000/predict", {
+      const res = await fetch("https://phishguard-4kck.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -511,7 +511,7 @@ export default function App() {
       if (data.status === "success") { setResult(data); }
       else throw new Error(data.error);
     } catch {
-      setError("Cannot reach the backend. Ensure Flask is running on port 5000.");
+      setError("Cannot reach the backend. Ensure the server is online.");
     }
     setLoading(false);
   };
