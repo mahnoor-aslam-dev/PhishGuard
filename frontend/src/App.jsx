@@ -501,7 +501,7 @@ export default function App() {
       payload = { mode: "manual", ...formData };
     }
     try {
-      const res = await fetch("https://phishguard-o397.onrender.com/predict", {
+      const res = await fetch(https://phishguard-o397.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
