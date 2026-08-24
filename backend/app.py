@@ -6,8 +6,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app) 
-
+CORS(app, resources={r"/*": {"origins": "*"}})
 # Load Models Safely
 try:
     master_model = joblib.load('models/final_master_ensemble.pkl')
